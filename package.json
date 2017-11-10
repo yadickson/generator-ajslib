@@ -1,66 +1,56 @@
 {
-  "name": "generator-ajslib",
-  "version": "0.0.0",
-  "description": "Yeoman Gulp Generator for AngularJS Library ",
-  "homepage": "https://github.com/yadickson/generator-ajslib",
-  "author": {
-    "name": "Yadickson Soto",
-    "email": "yadickson@gmail.com",
-    "url": "https://github.com/yadickson"
-  },
-  "files": ["generators"],
-  "main": "generators/index.js",
-  "keywords": ["yeoman angularjs library yadickson", "yeoman-generator"],
-  "devDependencies": {
-    "yeoman-test": "^1.6.0",
-    "yeoman-assert": "^3.0.0",
-    "coveralls": "^2.13.1",
-    "nsp": "^2.6.3",
-    "eslint": "^4.1.0",
-    "prettier": "^1.7.0",
-    "husky": "^0.14.3",
-    "lint-staged": "^4.2.1",
-    "eslint-config-prettier": "^2.4.0",
-    "eslint-plugin-prettier": "^2.2.0",
-    "eslint-config-xo": "^0.18.2",
-    "jest": "^21.0.0",
-    "jest-cli": "^21.0.0"
-  },
-  "dependencies": {
-    "yeoman-generator": "^1.0.0",
-    "chalk": "^1.1.3",
-    "yosay": "^2.0.0"
-  },
-  "jest": {
-    "testEnvironment": "node"
-  },
-  "scripts": {
-    "prepublish": "nsp check",
-    "pretest": "eslint .",
-    "precommit": "lint-staged",
-    "test": "jest"
-  },
-  "lint-staged": {
-    "*.js": ["eslint --fix", "git add"],
-    "*.json": ["prettier --write", "git add"]
-  },
-  "eslintConfig": {
-    "extends": ["xo", "prettier"],
-    "env": {
-      "jest": true,
-      "node": true
+    "name": "generator-ajslib",
+    "version": "1.0.0",
+    "description": "Yeoman Gulp generator for AngularJS Library",
+    "homepage": "https://github.com/yadickson/generator-ajslib",
+    "author": {
+        "name": "Yadickson Soto",
+        "email": "yadickson@gmail.com",
+        "url": "https://github.com/yadickson"
     },
-    "rules": {
-      "prettier/prettier": [
-        "error",
-        {
-          "singleQuote": true,
-          "printWidth": 90
-        }
-      ]
+    "files": [
+        "generators/app",
+        "generators/directive",
+        "generators/filter",
+        "generators/service",
+        "generators/provider",
+        "generators/factory",
+        "generators/value",
+        "generators/constant",
+        "generators/decorator",
+        "generators/component"
+    ],
+    "main": "generators/app/index.js",
+    "keywords": [
+        "yeoman gulp angularjs mocha chai karma",
+        "yeoman-generator"
+    ],
+    "dependencies": {
+        "camelize": "^1.0.0",
+        "chalk": "^2.3.0",
+        "command-exists": "^1.2.2",
+        "decamelize": "^1.2.0",
+        "file-system": "^2.2.2",
+        "string-template": "^1.0.0",
+        "upper-case": "^1.1.3",
+        "uppercamelcase": "^3.0.0",
+        "yeoman-generator": "^2.0.1",
+        "yosay": "^2.0.0"
     },
-    "plugins": ["prettier"]
-  },
-  "repository": "git@github.com:yadickson/generator-ajslib.git",
-  "license": "GPL-3.0"
+    "devDependencies": {
+        "coveralls": "^3.0.0",
+        "mkdirp": "^0.5.1",
+        "mocha": "^4.0.1",
+        "nyc": "^11.3.0",
+        "rimraf": "^2.6.2",
+        "yeoman-assert": "^3.0.0",
+        "yeoman-test": "^1.6.0"
+    },
+    "scripts": {
+        "clean": "./node_modules/.bin/rimraf coverage reports *.tgz",
+        "test": "./node_modules/.bin/nyc --reporter=html mocha --recursive",
+        "coveralls": "./node_modules/.bin/nyc report --reporter=text-lcov | coveralls"
+    },
+    "repository": "https://github.com/yadickson/generator-ajslib.git",
+    "license": "GPL-3.0"
 }
