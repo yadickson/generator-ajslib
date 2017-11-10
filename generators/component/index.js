@@ -16,7 +16,7 @@ module.exports = class extends Generator {
             desc: 'Disable yosay console (default: false)'
         });
 
-        this.name = this.options.componentname || 'none';
+        this.name = this.options.componentname;
         this.console = !this.options.disableConsole;
     }
 

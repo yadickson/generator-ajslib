@@ -26,6 +26,7 @@
         "yeoman-generator"
     ],
     "dependencies": {
+        "command-exists": "^1.2.2",
         "generator-ajsbase": "^1.0.0"
     },
     "devDependencies": {
