@@ -1,5 +1,5 @@
 # generator-ajslib
-> Yeoman Gulp generator for AngularJS Library
+> Yeoman Gulp Generator for AngularJS Library
 
 [![TravisCI Status][travis-image]][travis-url]
 [![Coverage Status][coveralls-image]][coveralls-url]
