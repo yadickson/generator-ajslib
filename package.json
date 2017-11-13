@@ -45,7 +45,7 @@
     },
     "peerDependencies": {
         "generator-ajsbase": "^1.0.2"
-    }
+    },
     "scripts": {
         "clean": "./node_modules/.bin/rimraf coverage reports *.tgz",
         "test": "./node_modules/.bin/nyc --reporter=html mocha --recursive",
