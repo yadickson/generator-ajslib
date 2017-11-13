@@ -15,7 +15,7 @@ gulp.task('clean', () => {
     return del(['build', 'dist', 'coverage', 'reports', '*.tgz', '*.zip', 'docs']);
 });
 
-gulp.task('compile', ['jshint'], () => {});
+gulp.task('compile', ['scripts', 'jshint'], () => {});
 
 gulp.task('default', ['build'], () => {});
 
@@ -46,11 +46,15 @@ gulp.task('docs', () => {
 gulp.task('scripts', () => {
     return ajslib.buildScripts({
             dest: dest,
-            minimal: minimal
-        })
-        .pipe(reload({
-            stream: true
-        }));
+            minimal: minimal,
+            name: '<%= projectLib %>'
+        });
+});
+
+gulp.task('jshint', () => {
+    return ajslib.srcScripts()
+        .pipe(jshint())
+        .pipe(jshint.reporter());
 });
 
 gulp.task('js2docs', function() {

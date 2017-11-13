@@ -2,9 +2,9 @@
 const Generator = require('yeoman-generator');
 const chalk = require('chalk');
 const yosay = require('yosay');
-const mkdirp = require('mkdirp');
 const commandExists = require('command-exists').sync;
 const camelize = require('camelize')
+const decamelize = require('decamelize');
 
 module.exports = class extends Generator {
 
@@ -75,6 +75,7 @@ module.exports = class extends Generator {
             this.username = props.username;
 
             this.projectModule = camelize(this.name) + "Module";
+            this.projectLib = decamelize(camelize(this.name)).replace("_", "-");
 
             this.config.set('name', this.name);
             this.config.set('projectModule', this.projectModule);
@@ -119,6 +120,7 @@ module.exports = class extends Generator {
                 date: (new Date).toISOString().split('T')[0],
                 name: this.pkg.name,
                 version: this.pkg.version,
+                projectLib: this.projectLib,
                 includeSass: this.includeSass,
                 includeBootstrap: this.includeBootstrap
             }
