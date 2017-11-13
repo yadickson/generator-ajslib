@@ -15,7 +15,7 @@
     "coveralls": "^3.0.0",
     "del": "^2.2.0",
     "gulp": "^3.9.0",
-    "gulp-ajslib": "^1.0.0",
+    "gulp-ajslib": "^1.1.0",
     "gulp-jshint": "^2.0.4",
     "jshint": "^2.9.5",
     "karma": "^1.7.1",
