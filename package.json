@@ -1,6 +1,6 @@
 {
     "name": "generator-ajslib",
-    "version": "1.1.4",
+    "version": "1.1.5",
     "description": "Yeoman Gulp Generator for AngularJS Library",
     "homepage": "https://github.com/yadickson/generator-ajslib",
     "author": {

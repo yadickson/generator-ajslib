@@ -39,7 +39,7 @@ gulp.task('docs', () => {
     return new Promise(resolve => {
         minimal = true;
         dest = 'docs';
-        runSequence(['clean'], ['compile'], ['js2docs'], resolve);
+        runSequence(['clean'], ['js2docs'], resolve);
     });
 });
 
