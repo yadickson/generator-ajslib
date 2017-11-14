@@ -12,9 +12,16 @@
 
 First, install [Yeoman](http://yeoman.io) and generator-ajslib using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
 
+Simply run a global install using your terminal and you're good to go!
+
 ```bash
-npm install -g yo
-npm install -g generator-ajslib generator-ajsbase
+npm install -g yo generator-ajslib generator-ajsbase
+```
+
+If you're a cool kid using Yarn then simply just use yarn as you would
+
+```bash
+yarn global add yo generator-ajslib generator-ajsbase
 ```
 
 ## List generators

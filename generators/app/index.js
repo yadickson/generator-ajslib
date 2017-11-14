@@ -5,6 +5,7 @@ const yosay = require('yosay');
 const commandExists = require('command-exists').sync;
 const camelize = require('camelize')
 const decamelize = require('decamelize');
+const pkg = require('package-json-utils');
 
 module.exports = class extends Generator {
 
@@ -37,32 +38,32 @@ module.exports = class extends Generator {
             type: 'input',
             name: 'name',
             message: 'Your project name',
-            default: this.config.get('name') || this.appname
+            default: pkg.getProjectName() || this.appname
         }, {
             type: 'input',
             name: 'description',
             message: 'Description',
-            default: this.config.get('description')
+            default:pkg.getDescription()
         }, {
             type: 'input',
             name: 'author',
             message: 'Author',
-            default: this.config.get('author')
+            default: pkg.getAuthor()
         }, {
             type: 'input',
             name: 'email',
             message: 'Email',
-            default: this.config.get('email')
+            default: pkg.getEmail()
         }, {
             type: 'input',
             name: 'license',
             message: 'License',
-            default: this.config.get('license') || 'GPL-3.0'
+            default: pkg.getLicense()
         }, {
             type: 'input',
             name: 'username',
             message: 'What\'s your GitHub username',
-            default: this.config.get('username')
+            default: pkg.getUsername()
         }];
 
         return this.prompt(prompts).then(props => {
@@ -76,17 +77,6 @@ module.exports = class extends Generator {
 
             this.projectModule = camelize(this.name) + "Module";
             this.projectLib = decamelize(camelize(this.name)).replace("_", "-");
-
-            this.config.set('name', this.name);
-            this.config.set('projectModule', this.projectModule);
-            this.config.set('version', '0.0.0');
-            this.config.set('description', this.description);
-            this.config.set('author', this.author);
-            this.config.set('email', this.email);
-            this.config.set('license', this.license);
-            this.config.set('username', this.username);
-            this.config.set('includeBootstrap', this.includeBootstrap);
-            this.config.set('includeSass', this.includeSass);
 
         });
     }
@@ -136,6 +126,7 @@ module.exports = class extends Generator {
                 description: this.description,
                 author: this.author,
                 email: this.email,
+                username: this.username,
                 license: this.license,
                 includeSass: this.includeSass,
                 includeBootstrap: this.includeBootstrap
