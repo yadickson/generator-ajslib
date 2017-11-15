@@ -21,6 +21,7 @@
         "gulp": "^3.9.0",
         "gulp-ajslib": "^1.2.0",
         "gulp-jshint": "^2.0.4",
+        "gulp-ngdocs-components": "^0.1.4",
         "gulp-order": "^1.1.1",
         "jshint": "^2.9.5",
         "karma": "^1.7.1",
