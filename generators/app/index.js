@@ -43,7 +43,7 @@ module.exports = class extends Generator {
             type: 'input',
             name: 'description',
             message: 'Description',
-            default:pkg.getDescription()
+            default: pkg.getDescription()
         }, {
             type: 'input',
             name: 'author',
@@ -88,6 +88,7 @@ module.exports = class extends Generator {
         this._writingGitIgnore();
         this._writingKarmaConfig();
         this._writingTravisConfig();
+        this._writingMainScript();
     }
 
     _writingReadme() {
@@ -152,6 +153,19 @@ module.exports = class extends Generator {
         this.fs.copy(
             this.templatePath('_travis.yml'),
             this.destinationPath('.travis.yml')
+        );
+    }
+
+    _writingMainScript() {
+        this.fs.copyTpl(
+            this.templatePath('src/main.js'),
+            this.destinationPath('src/main.js'), {
+                name: this.name,
+                description: this.description,
+                author: this.author,
+                license: this.license,
+                username: this.username
+            }
         );
     }
 
