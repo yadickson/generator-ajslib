@@ -17,7 +17,7 @@
         "angular-mocks": "~1.6.1",
         "chai": "^4.1.2",
         "coveralls": "^3.0.0",
-        "del": "^2.2.0",
+        "del": "^3.0.0",
         "gulp": "^3.9.0",
         "gulp-ajslib": "^1.2.0",
         "gulp-jshint": "^2.0.4",
@@ -35,7 +35,7 @@
         "karma-phantomjs-launcher": "^1.0.4",
         "mocha": "^4.0.1",
         "package-json-io": "^1.0.0",
-        "run-sequence": "^1.2.2"
+        "run-sequence": "^2.2.0"
     },
     "scripts": {
         "docs": "gulp docs",
