@@ -34,5 +34,9 @@ describe('generator-ajslib:app', () => {
         it('creates .travis.yml', () => {
             assert.file(['.travis.yml']);
         });
+
+        it('creates src/main.js', () => {
+            assert.file(['src/main.js']);
+        });
     });
 });

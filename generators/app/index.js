@@ -75,9 +75,8 @@ module.exports = class extends Generator {
             this.license = props.license;
             this.username = props.username;
 
-            this.projectModule = camelize(this.name) + "Module";
+            this.modulename = pkg.getModuleName();
             this.projectLib = decamelize(camelize(this.name)).replace("_", "-");
-
         });
     }
 
@@ -128,6 +127,7 @@ module.exports = class extends Generator {
                 author: this.author,
                 email: this.email,
                 username: this.username,
+                projectLib: this.projectLib,
                 license: this.license,
                 includeSass: this.includeSass,
                 includeBootstrap: this.includeBootstrap
@@ -160,11 +160,7 @@ module.exports = class extends Generator {
         this.fs.copyTpl(
             this.templatePath('src/main.js'),
             this.destinationPath('src/main.js'), {
-                name: this.name,
-                description: this.description,
-                author: this.author,
-                license: this.license,
-                username: this.username
+                modulename: this.modulename
             }
         );
     }

@@ -3,14 +3,12 @@
 
     /**
      * @ngdoc overview
-     * @name <%= projectModule %>
-     *
-     * @requires ui.router
+     * @name <%= modulename %>
      *
      * @description
-     * Description of the module <%= projectModule %>
+     * Description of the module <%= modulename %>
      */
     angular
-        .module('<%= projectModule %>', []);
+        .module('<%= modulename %>', []);
 
 })();
