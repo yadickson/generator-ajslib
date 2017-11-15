@@ -75,7 +75,7 @@ module.exports = class extends Generator {
             this.license = props.license;
             this.username = props.username;
 
-            this.modulename = camelize(this.name || 'app') + 'Module';
+            this.modulename = camelize(this.name) + 'Module';
             this.projectLib = decamelize(camelize(this.name)).replace("_", "-");
         });
     }
