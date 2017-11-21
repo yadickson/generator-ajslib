@@ -8,27 +8,42 @@
 [![dev-dependencies][dev-dependencies-image]][dev-dependencies-url]
 [![Known Vulnerabilities][vulnerabilities-image]][vulnerabilities-url]
 <% } %>
-## Installation
 
-First, install [Yeoman](http://yeoman.io) using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
+This library use AngularJS and Html5
 
-```bash
-npm install -g yo
-```
-
-Then generate your new project:
+## Prebuild library
 
 ```bash
-yo ajslib
+yarn install
 ```
 
-## Getting To Know Yeoman
+## Test library
 
- * Yeoman has a heart of gold.
- * Yeoman is a person with feelings and opinions, but is very easy to work with.
- * Yeoman can be too opinionated at times but is easily convinced not to be.
- * Feel free to [learn more about Yeoman](http://yeoman.io/).
- * Documentation on [AngularJS Library](https://github.com/yadickson/generator-ajslib#readme).
+```bash
+gulp test
+```
+
+## Build library
+
+```bash
+gulp build
+```
+
+## Dist library
+
+```bash
+gulp dist
+```
+
+## Clean project
+
+```bash
+gulp clean
+```
+
+## Thanks
+
+ * Build application with [AngularJS Library](https://github.com/yadickson/generator-ajslib#readme).
 
 <% if (license) { %>
 ## License

@@ -75,7 +75,7 @@ module.exports = class extends Generator {
             this.license = props.license;
             this.username = props.username;
 
-            this.modulename = camelize(this.name) + 'Module';
+            this.modulename = camelize(this.name || 'app') + 'Module';
             this.projectLib = decamelize(camelize(this.name)).replace("_", "-");
         });
     }
@@ -126,9 +126,9 @@ module.exports = class extends Generator {
                 description: this.description,
                 author: this.author,
                 email: this.email,
+                license: this.license,
                 username: this.username,
                 projectLib: this.projectLib,
-                license: this.license,
                 includeSass: this.includeSass,
                 includeBootstrap: this.includeBootstrap
             }
@@ -174,10 +174,8 @@ module.exports = class extends Generator {
             yarn: hasYarn
         });
 
-        var text = 'Run ' + chalk.red('npm [options [build, dist, test, docs]]');
+        var text = 'Check ' + chalk.red('README.md') + ' file';
         this.log(this.console ? yosay(text) : text);
 
-        text = 'Run ' + chalk.red('yo ajslib --help');
-        this.log(this.console ? yosay(text) : text);
     }
 };
