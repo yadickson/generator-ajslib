@@ -20,7 +20,7 @@
         "coveralls": "^3.0.0",
         "del": "^3.0.0",
         "gulp": "^3.9.0",
-        "gulp-ajslib": "^1.3.2",
+        "gulp-ajslib": "^1.3.3",
         "gulp-jshint": "^2.0.4",
         "gulp-ngdocs-components": "^0.1.4",
         "gulp-order": "^1.1.1",
