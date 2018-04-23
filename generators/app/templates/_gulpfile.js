@@ -10,6 +10,7 @@ const ajslib = require("gulp-ajslib");
 let dev = true;
 let minimal = false;
 let dest = 'dist';
+let addpaths = [];
 
 gulp.task('clean', () => {
     return del(['build', 'dist', 'coverage', 'reports', '*.tgz', '*.zip', 'docs']);
@@ -47,6 +48,7 @@ gulp.task('scripts', () => {
     return ajslib.buildScripts({
             dest: dest,
             minimal: minimal,
+            addpaths: addpaths,
             name: '<%= projectLib %>'
         });
 });
@@ -66,7 +68,8 @@ gulp.task('js2docs', function() {
 gulp.task('pretest', ['clean'], function() {
     return ajslib.updateKarmaFile({
         configFile: 'karma.conf.js',
-        dest: '.'
+        dest: '.',
+        addpaths: addpaths
     });
 });
 
